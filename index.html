@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberEDT Hash Generator - Advanced Secure Hashing Tool</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Free online Hash Generator. Generate secure MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hashes locally. Includes file hashing, text comparing, and cybersecurity educational resources." />
+  <meta name="keywords"
+    content="hash generator, md5 generator, sha256 generator, sha512 hashtag, file hash checker, checksum verifier, cybersecurity tools, online hasher, base64 encoder, local hashing" />
+  <meta name="author" content="CyberEDT" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cyberedt.com/tools/hash-generator" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cyberedt.com/tools/hash-generator" />
+  <meta property="og:title" content="CyberEDT Hash Generator & Secure Encoder" />
+  <meta property="og:description"
+    content="Generate secure cryptographic hashes (SHA-256, MD5) and verify file integrity locally in your browser. No data upload required." />
+  <meta property="og:image" content="https://cyberedt.com/assets/hash-gen-preview.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://cyberedt.com/tools/hash-generator" />
+  <meta property="twitter:title" content="CyberEDT Hash Generator & Secure Encoder" />
+  <meta property="twitter:description"
+    content="Generate secure cryptographic hashes (SHA-256, MD5) and verify file integrity locally in your browser. No data upload required." />
+  <meta property="twitter:image" content="https://cyberedt.com/assets/hash-gen-preview.jpg" />
+
+  <!-- Security Tags -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <!-- Content Security Policy: Allow mostly same-origin, but allow fonts/styles from google/cloudflare and inline styles/scripts for this app -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: blob:;" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "CyberEDT Hash Generator",
+      "url": "https://cyberedt.com/tools/hash-generator",
+      "description": "Generate secure MD5, SHA-256, SHA-512 hashes locally. Advanced comparison tool and educational resources for cybersecurity professionals.",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .font-mono {
+      font-family: 'Share Tech Mono', monospace;
+    }
+
+    /* Checkbox animation */
+    #toggle-realtime:checked+label {
+      color: #00f0ff;
+    }
+  </style>
+</head>
+
+<body
+  class="has-cyber-cursor bg-gray-100 dark:bg-cyber-black text-gray-800 dark:text-gray-200 font-cyber antialiased min-h-screen flex flex-col justify-center items-center py-10 relative overflow-x-hidden transition-colors duration-300">
+
+  <!-- Animated background elements (Dark Mode Only) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0 hidden dark:block">
+    <div
+      class="absolute top-[10%] left-[20%] w-72 h-72 bg-cyber-blue/10 rounded-full blur-3xl opacity-30 animate-[pulse_5s_infinite]">
+    </div>
+    <div
+      class="absolute bottom-[10%] right-[20%] w-96 h-96 bg-cyber-purple/10 rounded-full blur-3xl opacity-20 animate-[pulse_7s_infinite_reverse]">
+    </div>
+  </div>
+
+  <!-- Theme Toggle (Top Right) -->
+  <div class="absolute top-4 right-4 z-50">
+    <button id="theme-toggle"
+      class="p-3 rounded-full bg-white dark:bg-white/10 shadow-lg hover:bg-gray-100 dark:hover:bg-white/20 transition-all text-gray-800 dark:text-yellow-300 focus:outline-none focus:ring-2 focus:ring-cyber-blue">
+      <i class="fas fa-sun dark:hidden"></i>
+      <i class="fas fa-moon hidden dark:block"></i>
+    </button>
+  </div>
+
+  <!-- Main Container -->
+  <div
+    class="w-full max-w-4xl px-4 z-10 glass-panel bg-white/80 dark:bg-glass-bg border-gray-200 dark:border-gray-800/50 p-6 md:p-8 shadow-2xl backdrop-blur-xl relative transition-colors duration-300 my-8">
+
+    <!-- Logo / Header -->
+    <div class="text-center mb-8">
+      <div
+        class="inline-flex items-center justify-center p-3 bg-cyber-blue/10 dark:bg-white/5 rounded-full mb-4 ring-1 ring-cyber-blue/20 dark:ring-white/10 glow-icon">
+        <img src="./assets/logo.jpg" alt="CyberEDT Logo" class="w-16 h-16 object-contain">
+      </div>
+      <h1
+        class="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 dark:from-white dark:via-gray-200 dark:to-gray-400 mb-2">
+        Hash Generator & Encoder</h1>
+      <p class="text-gray-500 dark:text-gray-400 text-lg">Generate secure cryptographic hashes instantly</p>
+    </div>
+
+    <!-- Input Section with Tabs -->
+    <div class="mb-8">
+      <div class="flex border-b border-gray-200 dark:border-gray-700 mb-4">
+        <button id="tab-text" class="nav-tab active w-1/2 flex justify-center items-center gap-2">
+          <i class="fas fa-font"></i> Text Input
+        </button>
+        <button id="tab-file" class="nav-tab w-1/2 flex justify-center items-center gap-2">
+          <i class="fas fa-file-upload"></i> File Input
+        </button>
+      </div>
+
+      <!-- Text Input Area -->
+      <div id="panel-text" class="space-y-3">
+        <div class="relative group">
+          <textarea id="input-text" rows="4"
+            class="cyber-input w-full bg-white dark:bg-black/20 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 focus:ring-2 focus:ring-cyber-blue border-gray-300 dark:border-gray-700/50 pr-12"
+            placeholder="Type or paste your text here to generate hash..."></textarea>
+          <button id="btn-clear" 
+            class="absolute right-3 top-3 px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-red-500 rounded text-[10px] font-bold uppercase transition-all opacity-0 group-hover:opacity-100 focus:opacity-100 border border-gray-200 dark:border-gray-700 shadow-sm flex items-center gap-1"
+            title="Clear Input">
+            <i class="fas fa-trash-alt text-[8px]"></i> Clear
+          </button>
+        </div>
+        
+        <!-- Input Stats -->
+        <div class="flex justify-between items-center px-1">
+          <div class="flex gap-4 text-[10px] uppercase tracking-widest font-mono text-gray-500 dark:text-gray-400">
+            <span>Input Length: <span id="input-char-count" class="text-cyber-blue font-bold">0</span> characters</span>
+            <span>Bytes: <span id="input-byte-count" class="text-cyber-blue font-bold">0</span></span>
+          </div>
+          <div id="input-status" class="text-[10px] text-green-500 font-mono italic opacity-0 transition-opacity">
+            Content Updated
+          </div>
+        </div>
+      </div>
+
+      <!-- File Upload Area (Hidden by default) -->
+      <div id="panel-file" class="hidden">
+        <div
+          class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-10 text-center hover:bg-gray-50 dark:hover:bg-white/5 transition-colors cursor-pointer relative group">
+          <input type="file" id="input-file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+          <div class="space-y-2 pointer-events-none">
+            <i
+              class="fas fa-cloud-upload-alt text-4xl text-gray-400 dark:text-gray-500 group-hover:text-cyber-blue transition-colors"></i>
+            <p class="text-gray-600 dark:text-gray-300 font-medium">Click to upload or drag & drop</p>
+            <p class="text-sm text-gray-500">Supports any file type (max 100MB for browser processing)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Algorithm Selection -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div>
+        <label class="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-2 flex items-center gap-2">
+          Hashing Algorithm
+          <div class="relative group">
+            <i class="fas fa-info-circle text-gray-400 cursor-help"></i>
+            <div
+              class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-2 bg-gray-900 text-xs text-gray-300 rounded shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20">
+              SHA-256 is the industry standard for secure hashing. Use Base64 for data encoding.
+            </div>
+          </div>
+        </label>
+        <div class="relative">
+          <select id="algo-select"
+            class="cyber-input text-gray-800 dark:text-gray-200 bg-white dark:bg-cyber-dark/50 appearance-none cursor-pointer border-gray-300 dark:border-gray-700">
+            <optgroup label="Secure Hash Algorithms">
+              <option value="SHA-256" selected>SHA-256 (Recommended)</option>
+              <option value="SHA-512">SHA-512</option>
+              <option value="SHA-1">SHA-1</option>
+              <option value="SHA-3-512">SHA-3</option>
+            </optgroup>
+            <optgroup label="Legacy / Other">
+              <option value="MD5">MD5</option>
+              <option value="Base64">Base64 Encode</option>
+            </optgroup>
+          </select>
+          <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-cyber-blue">
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-end">
+        <div class="flex items-center gap-2 mb-2 justify-end">
+          <input type="checkbox" id="toggle-realtime" class="accent-cyber-blue w-4 h-4 cursor-pointer">
+          <label for="toggle-realtime"
+            class="text-sm text-gray-500 dark:text-gray-400 cursor-pointer select-none transition-colors">Real-time
+            Generation</label>
+        </div>
+        <button id="btn-generate" class="cyber-btn w-full flex justify-center items-center gap-2 group">
+          <span>Generate Hash</span>
+          <i class="fas fa-bolt group-hover:animate-pulse"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Result Output -->
+    <div
+      class="bg-gray-50 dark:bg-black/40 rounded-xl p-6 border border-gray-200 dark:border-gray-800 relative group transition-all duration-300 hover:border-cyber-blue/30 shadow-inner">
+      <label class="block text-xs uppercase tracking-wider text-cyber-blue font-bold mb-2 flex justify-between">
+        <span>Output Result</span>
+        <span id="algo-display"
+          class="bg-cyber-blue/10 dark:bg-cyber-blue/20 px-2 py-0.5 rounded text-[10px]">SHA-256</span>
+      </label>
+
+      <div class="relative">
+        <code id="output-hash"
+          class="block w-full text-gray-600 dark:text-gray-300 font-mono break-all bg-transparent p-2 min-h-[3rem] text-sm md:text-base selection:bg-cyber-blue selection:text-black">
+            <!-- Result will appear here -->
+            <span class="text-gray-400 dark:text-gray-600 italic">Waiting for input...</span>
+          </code>
+
+        <div class="absolute right-0 top-0 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+          <button id="btn-copy"
+            class="p-2 text-gray-500 dark:text-gray-400 hover:text-cyber-blue dark:hover:text-white bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors shadow-sm"
+            title="Copy to clipboard">
+            <i class="fas fa-copy"></i>
+          </button>
+          <button id="btn-download"
+            class="p-2 text-gray-500 dark:text-gray-400 hover:text-cyber-blue dark:hover:text-white bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-md transition-colors shadow-sm"
+            title="Download as .txt">
+            <i class="fas fa-download"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Hash Length Indicator -->
+      <div id="hash-info"
+        class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800/50 flex flex-wrap gap-x-6 gap-y-2 text-xs font-mono text-gray-500 dark:text-gray-400 opacity-0 transition-opacity duration-300">
+        <div class="flex items-center gap-1.5">
+          <span class="text-cyber-blue"><i class="fas fa-ruler-horizontal"></i> Length:</span>
+          <span id="info-length" class="text-gray-700 dark:text-gray-200">0 characters</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-cyber-blue"><i class="fas fa-code"></i> Format:</span>
+          <span id="info-format" class="text-gray-700 dark:text-gray-200">Hexadecimal</span>
+        </div>
+        <div class="flex items-center gap-1.5">
+          <span class="text-cyber-blue"><i class="fas fa-microchip"></i> Algorithm:</span>
+          <span id="info-algorithm" class="text-gray-700 dark:text-gray-200">-</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison Tool -->
+    <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-800">
+      <h3
+        class="text-sm font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-4 flex items-center gap-2">
+        <i class="fas fa-check-double"></i> Hash Matcher
+      </h3>
+      <div class="relative">
+        <input type="text" id="compare-input"
+          class="cyber-input w-full bg-white dark:bg-black/20 text-gray-800 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-600 border-gray-300 dark:border-gray-700/50 pl-10 pr-24"
+          placeholder="Paste another hash here to compare...">
+        <div class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+          <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Comparison Result Badge -->
+        <div id="compare-badge"
+          class="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1 rounded text-xs font-bold hidden transition-all">
+          <!-- JS will inject MATCH / NO MATCH -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Learning Link -->
+  <div class="mt-8 text-center px-4 relative z-10">
+    <a href="learn.html" class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-cyber-blue transition-colors group">
+      <i class="fas fa-book-open"></i>
+      <span>Want to learn how hashing works?</span>
+      <span class="font-bold underline underline-offset-4 group-hover:no-underline">Read our Documentation</span>
+      <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+    </a>
+  </div>
+
+  <!-- Educational Content (SEO) -->
+  <section class="max-w-4xl w-full px-4 mb-20 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Card 1 -->
+      <div
+        class="bg-white/80 dark:bg-glass-bg border border-gray-200 dark:border-glass-border rounded-xl p-6 shadow-lg backdrop-blur text-sm">
+        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
+          <i class="fas fa-graduation-cap text-cyber-blue"></i> What is Hashing?
+        </h3>
+        <p class="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+          Hashing is the process of converting data—text, numbers, files—into a fixed-size string of characters. A
+          secure hash is essentially a "digital fingerprint." No matter how large the input file is, the output hash
+          will always be the same length.
+        </p>
+        <div
+          class="bg-gray-100 dark:bg-black/30 p-3 rounded font-mono text-xs text-gray-700 dark:text-gray-300 border-l-4 border-cyber-blue">
+          Input: "CyberEDT" <br>
+          SHA-256: 3c6...a1b (Fixed Length)
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="bg-white/80 dark:bg-glass-bg border border-gray-200 dark:border-glass-border rounded-xl p-6 shadow-lg backdrop-blur text-sm">
+        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-3 flex items-center gap-2">
+          <i class="fas fa-shield-virus text-cyber-purple"></i> Why are Checksums Important?
+        </h3>
+        <ul class="space-y-2 text-gray-600 dark:text-gray-400 list-disc list-inside">
+          <li><strong class="text-gray-800 dark:text-gray-200">Data Integrity:</strong> Verify that downloaded files
+            have not been corrupted.</li>
+          <li><strong class="text-gray-800 dark:text-gray-200">Security:</strong> Ensure software hasn't been tampered
+            with by attackers.</li>
+          <li><strong class="text-gray-800 dark:text-gray-200">Password Storage:</strong> Websites store hashes, not
+            real passwords, to protect accounts.</li>
+        </ul>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="md:col-span-2 bg-white/80 dark:bg-glass-bg border border-gray-200 dark:border-glass-border rounded-xl p-6 shadow-lg backdrop-blur text-sm">
+        <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-3">Algorithm Comparison</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700">
+                <th class="py-2 px-2">Algorithm</th>
+                <th class="py-2 px-2">Security Level</th>
+                <th class="py-2 px-2">Speed</th>
+                <th class="py-2 px-2">Best Use Case</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700 dark:text-gray-300">
+              <tr class="border-b border-gray-200 dark:border-gray-800/50 hover:bg-black/10 transition-colors">
+                <td class="py-2 px-2 font-mono text-cyber-blue">MD5</td>
+                <td class="py-2 px-2 text-red-500 font-bold">Broken/Low</td>
+                <td class="py-2 px-2">Very Fast</td>
+                <td class="py-2 px-2">Non-security file verification</td>
+              </tr>
+              <tr class="border-b border-gray-200 dark:border-gray-800/50 hover:bg-black/10 transition-colors">
+                <td class="py-2 px-2 font-mono text-yellow-500 dark:text-yellow-300">SHA-1</td>
+                <td class="py-2 px-2 text-orange-500 font-bold">Weak</td>
+                <td class="py-2 px-2">Fast</td>
+                <td class="py-2 px-2">Legacy git repositories</td>
+              </tr>
+              <tr class="hover:bg-black/10 transition-colors">
+                <td class="py-2 px-2 font-mono text-green-500 dark:text-green-400">SHA-256</td>
+                <td class="py-2 px-2 text-green-500 font-bold">High</td>
+                <td class="py-2 px-2">Moderate</td>
+                <td class="py-2 px-2">Passwords, Digital Signatures, Blockchain</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer / Trust -->
+    <div class="mt-12 text-center flex flex-col items-center">
+      <div
+        class="inline-flex items-center gap-2 mb-2 px-4 py-2 bg-green-500/10 rounded-full border border-green-500/20">
+        <i class="fas fa-lock text-green-500"></i>
+        <span class="text-xs text-green-700 dark:text-green-400 font-semibold">Privacy Guaranteed: Hashing is
+          Client-Side</span>
+      </div>
+      <div class="font-mono text-gray-500 dark:text-gray-600 text-sm">
+        Powered by <span class="text-cyber-blue font-bold">CyberEDT</span> &copy; 2026
+      </div>
+    </div>
+  </section>
+
+  <!-- Cyber Cursor (isolated) -->
+  <div class="cyber-cursor"></div>
+  <div class="cyber-cursor-ring"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="/main.js"></script>
+  <script src="/cursor.js" defer></script>
+  <script>
+    // Quick Theme Init to avoid flash
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</body>
+
+</html>
