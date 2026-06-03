@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 180 100% 50%;
+    --success: 142.1 70.6% 45.3%;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: Inter, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-glow-primary {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  .border-glow {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.1) inset;
+  }
+}
+
+/* Scrollbar hidden but functional for better docs look */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+/* =============================================
+   CYBER CURSOR
+   Isolated — does not affect existing layout
+   ============================================= */
+body.has-cyber-cursor {
+    cursor: none !important;
+}
+
+.cyber-cursor,
+.cyber-cursor-ring {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    border-radius: 0;
+    will-change: transform;
+}
+
+.cyber-cursor {
+    width: 6px;
+    height: 6px;
+    background: #00f0ff;
+    box-shadow: 0 0 4px rgba(0,240,255,0.6);
+    margin-left: -3px;
+    margin-top: -3px;
+    transition: opacity 0.2s ease;
+}
+
+.cyber-cursor-ring {
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid rgba(0,240,255,0.65);
+    background: transparent;
+    opacity: 0.8;
+    margin-left: -14px;
+    margin-top: -14px;
+    transition: transform 0.08s linear, opacity 0.2s ease,
+                width 0.2s ease, height 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.cyber-cursor-ring--expand {
+    width: 44px;
+    height: 44px;
+    margin-left: -22px;
+    margin-top: -22px;
+    border-color: rgba(0,240,255,1);
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .cyber-cursor,
+    .cyber-cursor-ring {
+        display: none !important;
+    }
+    body.has-cyber-cursor {
+        cursor: auto !important;
+    }
+}
+
+
